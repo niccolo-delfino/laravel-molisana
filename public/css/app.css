@@ -20,3 +20,23 @@ header ul li {
   display: inline-block;
 }
 
+header ul li a {
+  color: #002D75;
+  padding: 15px;
+}
+
+header ul li a:hover {
+  background-color: #b3e5fc;
+}
+
+.slide {
+  margin-top: 20px;
+  height: 600px;
+  background-image: url(/images/home.jpg?cb7db241726fb646d7e1c8553429c07c);
+}
+
+.final {
+  height: 150px;
+  background-image: url(/images/montagne.jpg?d53b01335f4c26b84b40ca2ab0a64ece);
+}
+

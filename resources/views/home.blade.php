@@ -3,5 +3,7 @@
 @section('title','Home')
 
 @section('content')
-<p>sono la home</p>
+<section>
+  <div class="slide"></div>
+</section>
 @endsection

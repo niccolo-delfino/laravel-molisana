@@ -3,3 +3,27 @@
   height: 600px;
   background-image: url('../../img/home.jpg');
 }
+
+.all-cards{
+  display: flex;
+  flex-wrap: wrap;
+  .card{
+    width: calc(100% / 3);
+    height: 100%;
+    position: relative;
+    img{
+      max-width: 100%;
+    }
+    .over{
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.48);
+    }
+    &:hover .over{
+      display: block;
+    }
+  }
+}

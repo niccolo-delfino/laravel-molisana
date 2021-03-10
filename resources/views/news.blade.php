@@ -1,2 +1,2 @@
 @extends('layouts.app')
-<p>prova</p>
+@section('title','News')

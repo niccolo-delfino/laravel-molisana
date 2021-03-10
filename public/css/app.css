@@ -35,6 +35,34 @@ header ul li a:hover {
   background-image: url(/images/home.jpg?cb7db241726fb646d7e1c8553429c07c);
 }
 
+.all-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.all-cards .card {
+  width: calc(100% / 3);
+  height: 100%;
+  position: relative;
+}
+
+.all-cards .card img {
+  max-width: 100%;
+}
+
+.all-cards .card .over {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.48);
+}
+
+.all-cards .card:hover .over {
+  display: block;
+}
+
 .final {
   height: 150px;
   background-image: url(/images/montagne.jpg?d53b01335f4c26b84b40ca2ab0a64ece);

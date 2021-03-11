@@ -29,7 +29,7 @@ Route::get('/dettaglio/{id}', function ($id) {
 
     $prodotto= $pasta[$id];
 
-    $data = ['prodotto' => $prodotto];
+    $data = ['formato' => $prodotto];
     return view('dettagli',$data);
 })->name('pagina-dettagli');
 

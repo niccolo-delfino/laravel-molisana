@@ -12,6 +12,11 @@ a {
   text-decoration: none;
 }
 
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 header {
   text-align: center;
 }
@@ -60,6 +65,15 @@ header ul li a:hover {
 }
 
 .all-cards .card:hover .over {
+  display: block;
+}
+
+.prodotto {
+  max-width: 100%;
+}
+
+.prodotto img {
+  max-width: 100%;
   display: block;
 }
 

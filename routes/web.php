@@ -18,11 +18,20 @@ Route::get('/', function () {
 })->name('pagina-home');
 
 Route::get('/prodotti', function () {
-  $pasta = config('pasta');
+    $pasta = config('pasta');
 
-      $data = ['formati' => $pasta];
+    $data = ['formati' => $pasta];
     return view('products', $data);
 })->name('pagina-prodotti');
+
+Route::get('/dettaglio/{id}', function ($id) {
+    $pasta = config('pasta');
+
+    $prodotto= $pasta[$id];
+
+    $data = ['prodotto' => $prodotto];
+    return view('dettagli',$data);
+})->name('pagina-dettagli');
 
 Route::get('/notizie', function () {
     return view('news');

@@ -20,17 +20,38 @@ Route::get('/', function () {
 Route::get('/prodotti', function () {
     $pasta = config('pasta');
 
-    $data = ['formati' => $pasta];
+    $pasta_lunga = array_filter($pasta, function($elemento){
+      return $elemento['tipo'] == 'lunga';
+    });
+    $pasta_corta = array_filter($pasta, function($elemento){
+      return $elemento['tipo'] == 'corta';
+    });
+    $pasta_cortissima = array_filter($pasta, function($elemento){
+      return $elemento['tipo'] == 'cortissima';
+    });
+
+    $data = [
+      'formati' =>[
+        'lunga' => $pasta_lunga,
+        'corta' => $pasta_corta,
+        'cortissima' => $pasta_cortissima
+      ]
+    ];
     return view('products', $data);
 })->name('pagina-prodotti');
 
 Route::get('/dettaglio/{id}', function ($id) {
     $pasta = config('pasta');
 
-    $prodotto= $pasta[$id];
+    if ($id >= 0 && $id < count($pasta)) {
+      $prodotto= $pasta[$id];
 
-    $data = ['formato' => $prodotto];
-    return view('dettagli',$data);
+      $data = ['formato' => $prodotto];
+      return view('dettagli',$data);
+    }
+    else {
+      abort('404');
+    }
 })->name('pagina-dettagli');
 
 Route::get('/notizie', function () {

@@ -6,9 +6,9 @@
   </div>
   <div class="header-down">
     <ul>
-      <li><a href="{{ route('pagina-home') }}">Home</a></li>
-      <li><a href="{{ route('pagina-prodotti') }}">Prodotti</a></li>
-      <li><a href="{{ route('pagina-notizie') }}">News</a></li>
+      <li><a href="{{ route('pagina-home') }}" class="{{ (Request::route()->getName() == 'pagina-home') ? 'active' : ''}}">Home</a></li>
+      <li><a href="{{ route('pagina-prodotti') }}" class="{{ (Request::route()->getName() == 'pagina-prodotti') ? 'active' : ''}}">Prodotti</a></li>
+      <li><a href="{{ route('pagina-notizie') }}" class="{{ (Request::route()->getName() == 'pagina-notizie') ? 'active' : ''}}">News</a></li>
     </ul>
   </div>
 </header>
